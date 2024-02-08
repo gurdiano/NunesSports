@@ -1,0 +1,15 @@
+Nunes Sports
+
+
+produtos:
+	-exibição
+	-criação 
+	-edição
+	-deleção
+
+• Nome do produto
+• Código do produto
+• Descrição do produto
+• Preço do produto
+
+Nunes esportes vai vender raquete de tênis e bolinha de teênis inicialmente...
