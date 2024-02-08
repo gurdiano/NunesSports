@@ -23,6 +23,10 @@ public class Payment implements Serializable{
 	private Long id;
 	private Double payOut;
 	
+	public Payment() {
+		
+	}
+	
 	public Payment(Long id, Double payOut) {
 		this.id = id;
 		this.payOut = payOut;

@@ -23,6 +23,10 @@ public class Order implements Serializable{
 	private Long id;
 	private Double total;
 	
+	public Order() {
+			
+	}
+	
 	public Order(Long id, Double total) {
 		this.id = id;
 		this.total = total;

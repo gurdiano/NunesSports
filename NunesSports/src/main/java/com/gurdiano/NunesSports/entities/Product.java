@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_payment")
+@Table(name = "tb_product")
 public class Product implements Serializable{
 
 	/**
@@ -25,6 +25,10 @@ public class Product implements Serializable{
 	private String code;
 	private String description;
 	private Double price;
+	
+	public Product () {
+		
+	}
 	
 	public Product(Long id, String name, String code, String description, Double price) {
 		this.id = id;

@@ -23,6 +23,10 @@ public class ShoppingCart implements Serializable{
 	private Long id;
 	private Double total;
 	
+	public ShoppingCart() {
+		
+	}
+	
 	public ShoppingCart(Long id, Double total) {
 		this.id = id;
 		this.total = total;
