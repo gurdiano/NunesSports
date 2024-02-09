@@ -12,6 +12,6 @@ produtos:
 • Descrição do produto
 • Preço do produto
 
-Nunes esportes vai vender raquete de tênis e bolinha de teênis inicialmente...
+Nunes esportes vai vender raquete de tênis e bolinha de tênis inicialmente...
 
 <version>3.2.2</version>

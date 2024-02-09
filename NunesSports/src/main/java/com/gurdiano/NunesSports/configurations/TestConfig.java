@@ -42,9 +42,9 @@ public class TestConfig implements CommandLineRunner{
 		//Order(Long id, Double total)
 		//Payment(Long id, Instant date, Order order)
 		
-		Product p1 = new Product(null, "Raquete", "0567678", "Raquete otioma para jogos...", 150.00);
-		Product p2 = new Product(null, "Bola", "0567679", "Bola otioma para jogos...", 100.00);
-		Product p3 = new Product(null, "Overgrip", "0567680", "Bola otioma para jogos...", 54.90);
+		Product p1 = new Product(null, "Raquete", "0567678", "Raquete otima para jogos...", 150.00);
+		Product p2 = new Product(null, "Bola", "0567679", "Bola otima para jogos...", 100.00);
+		Product p3 = new Product(null, "Overgrip", "0567680", "Bola otima para jogos...", 54.90);
 		productRepository.saveAll(Arrays.asList(p1, p2, p3));
 		
 		User u1 = new User(null, "Tiago Gurdiano", "1234567");
