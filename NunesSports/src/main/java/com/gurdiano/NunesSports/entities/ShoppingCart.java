@@ -1,12 +1,15 @@
 package com.gurdiano.NunesSports.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,13 +26,19 @@ public class ShoppingCart implements Serializable{
 	private Long id;
 	private Double total;
 	
+	@ManyToOne
+	private User client;
+	
+	@ManyToMany
+	private List<Product> items;
+	
 	public ShoppingCart() {
-		
 	}
 	
-	public ShoppingCart(Long id, Double total) {
+	public ShoppingCart(Long id, Double total, User client) {
 		this.id = id;
 		this.total = total;
+		this.client = client;
 	}
 
 	public Long getId() {
@@ -46,6 +55,14 @@ public class ShoppingCart implements Serializable{
 
 	public void setTotal(Double total) {
 		this.total = total;
+	}
+
+	public User getClient() {
+		return client;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
 	}
 
 	@Override

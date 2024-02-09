@@ -1,12 +1,17 @@
 package com.gurdiano.NunesSports.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +28,10 @@ public class User implements Serializable{
 	private Long id;
 	private String username;
 	private String password;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "client")
+	private Set<ShoppingCart> cart = new HashSet<>();
 	
 	public User() {
 		

@@ -1,12 +1,16 @@
 package com.gurdiano.NunesSports.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +26,12 @@ public class Order implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Double total;
+	
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+	private Payment payment;
+	
+	@ManyToMany
+	private List<Product> items;
 	
 	public Order() {
 			

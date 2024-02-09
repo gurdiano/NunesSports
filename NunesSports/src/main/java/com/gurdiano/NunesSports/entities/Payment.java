@@ -1,12 +1,17 @@
 package com.gurdiano.NunesSports.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,15 +26,21 @@ public class Payment implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Double payOut;
+	private Instant date;
+	
+	@JsonIgnore
+	@MapsId
+	@OneToOne
+	private Order order;
 	
 	public Payment() {
 		
 	}
 	
-	public Payment(Long id, Double payOut) {
+	public Payment(Long id, Instant date, Order order) {
 		this.id = id;
-		this.payOut = payOut;
+		this.date = date;
+		this.order = order;
 	}
 
 	public Long getId() {
@@ -40,12 +51,20 @@ public class Payment implements Serializable{
 		this.id = id;
 	}
 
-	public Double getPayOut() {
-		return payOut;
+	public Instant getPayOut() {
+		return date;
 	}
 
-	public void setPayOut(Double payOut) {
-		this.payOut = payOut;
+	public void setPayOut(Instant date) {
+		this.date = date;
+	}
+	
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
 	@Override
