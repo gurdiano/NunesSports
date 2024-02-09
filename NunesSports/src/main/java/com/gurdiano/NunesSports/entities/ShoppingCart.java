@@ -24,7 +24,6 @@ public class ShoppingCart implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Double total;
 	
 	@ManyToOne
 	private User client;
@@ -35,9 +34,8 @@ public class ShoppingCart implements Serializable{
 	public ShoppingCart() {
 	}
 	
-	public ShoppingCart(Long id, Double total, User client) {
+	public ShoppingCart(Long id, User client) {
 		this.id = id;
-		this.total = total;
 		this.client = client;
 	}
 
@@ -49,20 +47,16 @@ public class ShoppingCart implements Serializable{
 		this.id = id;
 	}
 
-	public Double getTotal() {
-		return total;
-	}
-
-	public void setTotal(Double total) {
-		this.total = total;
-	}
-
 	public User getClient() {
 		return client;
 	}
 
 	public void setClient(User client) {
 		this.client = client;
+	}
+	
+	public Double getTotal() {
+		return null;
 	}
 
 	@Override

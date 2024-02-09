@@ -57,6 +57,18 @@ public class Order implements Serializable{
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+	
+	public Payment getPayment() {
+		return payment;
+	}
+
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
+
+	public List<Product> getItems() {
+		return items;
+	}
 
 	@Override
 	public int hashCode() {
